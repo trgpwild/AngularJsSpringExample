@@ -1,0 +1,17 @@
+<div style="float: right">
+	<a href="#!/tag/create" class="btn" ng-show="hasRole('admin')"><i class="icon-plus"></i> Create</a>
+</div>
+<div class="page-header">
+	<h3>Tags</h3>
+</div>
+
+<div ng-repeat="tag in tags">
+	<hr />
+	<div style="float: right">
+		<a ng-click="deleteEntry(tag)" class="btn btn-mini" ng-show="hasRole('admin')"><i class="icon-remove"></i></a>
+		<a href="#!/tag/edit/{{tag.id}}" class="btn btn-mini" ng-show="hasRole('admin')"><i class="icon-pencil"></i></a>
+	</div>
+	<h4>{{tag.date | date}}</h4>
+	<p>{{tag.content}}</p>
+</div>
+<hr />

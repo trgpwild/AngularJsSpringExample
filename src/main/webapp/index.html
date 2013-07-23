@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="AngularJsSpringExampleApp">
+<head>
+	<title>AngularJsSpringExample</title>
+	<link href="css/bootstrap-2.3.2.css" rel="stylesheet">
+	<link href="css/bootstrap-responsive-2.3.2.css" rel="stylesheet">
+</head>
+<body style="padding-top: 60px">
+	<div class="navbar navbar-fixed-top" style="position: absolute;">
+		<div class="navbar-inner">
+			<div class="container">
+				<a class="brand" href="#!/">AngularJsSpringExample</a>
+				<ul class="nav">
+					<li><a href="#!/user/list">Users</a></li>
+					<li class="active"><a href="#!/tag/list">Tag List</a></li>
+				</ul>
+				<ul class="nav pull-right" ng-show="user">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">{{user.name}} <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a ng-click="logout()">Logout</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="alert alert-error" ng-show="error">{{error}}</div>
+		<div ng-view></div>
+	</div>
+	<script src="lib/jquery.js"></script>
+	<script src="lib/bootstrap.js"></script>
+	<script src="lib/angular.js"></script>
+	<script src="lib/angular-resource.js"></script>
+	<script src="js/interceptor.js"></script>
+	<script src="js/application.js"></script>
+	<script src="js/authentication.js"></script>
+	<script src="js/router.js"></script>
+	<script src="js/controller/TagController.js"></script>
+	<script src="js/controller/LoginController.js"></script>
+	<script src="js/service/LoginService.js"></script>
+	<script src="js/service/TagService.js"></script>
+</body>
+</html>
